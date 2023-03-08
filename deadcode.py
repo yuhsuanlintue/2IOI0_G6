@@ -1,3 +1,17 @@
+def findPrintInfo():
+    num_events = len(event_log)
+    num_cases = len(event_log['case concept:name'].unique())
+    print("Number of events: {}\nNumber of cases: {}".format(num_events, num_cases))
+    print('=======================================================')
+
+    start_activities = pm.get_start_activities(event_log)
+    end_activities = pm.get_end_activities(event_log)
+    print("Start activities: {}\nEnd activities: {}".format(start_activities, end_activities))
+    print('=======================================================')
+
+    print('events: ')
+    print(event_log['event concept:name'].unique())
+
 #new collumn that indexes events within a case
 
 def addEventNumber(df):
